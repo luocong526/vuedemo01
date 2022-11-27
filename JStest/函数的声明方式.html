@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中函数的声明方式</title>
+		<script type="text/javascript">
+			//方式1
+			function fun1(){
+				alert("你好");
+			}
+			
+			//方式2
+			var fun2=function(){
+				alert("你好1");
+			}
+			
+			//方式3
+			var fun3=new Function('alert("你好3");');
+			
+			//调用
+			fun1();
+			fun2();
+			fun3();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

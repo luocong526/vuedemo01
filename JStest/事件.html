@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中的事件</title>
+		<script type="text/javascript">
+			function fun1(){
+				alert("单击事件1");
+			}
+			function fun2(){
+				alert("单击事件2");
+			}
+			function fun3(){
+				alert("按钮事件");
+			}
+			function fun4(){
+				alert("表单事件");
+			}
+		</script>
+	</head>
+	<body>
+		<h1>鼠标事件</h1>
+		<!-- 单击事件 -->
+		<input type="button" value="单击事件" onclick="fun1(),fun2()" />
+		<!-- 鼠标抬起 -->
+		<input type="button" value="鼠标右键打开菜单触发" oncontextmenu="fun2()" />
+		
+		<input type="button" value="鼠标双击" ondblclick="fun2()" />
+		
+		<input type="button" value="鼠标按下" onmousedown="fun2()" />
+		
+		<input type="button" value="鼠标指针离开" onmouseleave="fun2()" />
+		
+		<input type="button" value="鼠标移动" onmousemove="fun2()" />
+		
+		<input type="button" value="鼠标放上去" onmouseover="fun2()" />
+		
+		<input type="button" value="鼠标移开" onmouseout="fun2()" />
+		
+		<input type="button" value="鼠标按键被松开" onmouseup="fun2()" />
+		<br>
+		<br>
+		<hr >
+		<hr >
+		<h1>键盘事件</h1>
+		<input type="button" value="按钮按下" onkeydown="fun3()" />
+		<input type="button" value="按钮按下抬起" onkeyup="fun3()" />
+		<input type="button" value="按钮按下" onkeypress="fun3()" />
+		<br>
+		<br>
+		<hr >
+		<hr >
+		<h1>表单事件</h1>
+		<input type="button" value="失去焦点" onblur="fun4()" />
+		<input type="text" value="被改变" value="我是...." onchange="fun4()" />
+		<input type="button" value="获取焦点" onfocus="fun4()" />
+		<input type="button" value="即将获取焦点" onfocusin="fun4()" />
+		<input type="button" value="即将失去焦点" onfocusout="fun4()" />
+		<input type="text" value="用户输入时触发" oninput="fun4()" />
+		<input type="text" value="表单重置时触发" onreset="fun4()" />
+		<input type="search" value="输入文本时触发" onsearch="fun4()" />
+		<select onselect="选择时触发">
+			<option>------</option>
+		</select>
+		<input type="button" value="提交时触发" onsubmit="fun4()" />
+	</body>
+</html>

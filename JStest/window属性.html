@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中的属性</title>
+		<script type="text/javascript">
+			//通过location进行跳转和获取本机的ip和端口
+			function fun1(){
+				console.log(location.host);//127.0.0.1：8848
+				console.log(location.hostname);//127.0.0.1
+				console.log(location.port);//8848
+				console.log(location.href);//http://127.0.0.1:8848/JStest/window%E5%B1%9E%E6%80%A7.html
+				location.href="https://www.baidu.com";
+			}
+			//通过history控制向前向后跳转
+			function fun2(){
+				window.forward();
+			}
+			
+			function fun3(){
+				window.back();
+			}
+			
+			function fun4(){
+				window.go(2);//正数向前跳几页 负数向后跳几页
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="location" onclick="fun1()" />
+		<input type="button" value="向前" onclick="fun2()" />
+		<input type="button" value="向后" onclick="fun3()" />
+		<input type="button" value="go" onclick="fun4()" />
+	</body>
+</html>

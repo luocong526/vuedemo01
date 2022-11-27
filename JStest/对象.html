@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中的对象</title>
+		<script type="text/javascript">
+			//String
+			var s1="Hello World";
+			var s2=" Ai";
+			var s3=s1.concat(s2);
+			console.log(s3);
+			
+			//从哪里开始 截取多少个字符 索引是从0开始
+			console.log(s3.substr(0,5));
+			//从哪里开始 到哪里结束 索引是从0开始
+			console.log(s3.substring(0,7));
+			//将字符串解析为js代码执行
+			var s4="var s5=10;";
+			eval(s4);
+			console.log(s4);
+			
+			//number 转换为浮点
+			console.log(Number.parseFloat("10.12")+20);
+			//判断是否是nan
+			console.log(Number.isNaN(10));
+			
+			//date
+			function fun1(){
+				document.clear();
+				var date=new Date();
+				console.log(date);
+				var year=date.getFullYear();
+				var month=date.getMonth()+1;
+				var day=date.getDay();
+				var hour=date.getHours();
+				var min=date.getMinutes();
+				var sec=date.getSeconds();
+				document.write(year+" "+month+" "+day+" "+hour+" "+min+" "+sec);
+				// fun1();
+			}
+			fun1();
+			
+			//创建对象方式1
+			var obj=new Object();
+			obj.name="z";
+			obj.age=18;
+			obj.sex="女";
+			obj.run=function(ex){
+				console.log("正在 "+ex);
+			}
+			console.log(obj);
+			obj.run("跑步");
+			
+			//c创建对象方式2
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+				this.run=function(ex){
+					console.log(name+" "+age+" 在"+ex);
+				}
+			}
+			var per=new Person("z",18);
+			per.run("跑步");
+			
+			//创建对象方式3
+			var user={
+				name:"z",
+				age:10,
+				run1:function(ex){
+					console.log(this.name+" "+this.age+" 在"+ex);
+				}
+			};
+			
+			console.log(user.name);
+			console.log(user.age);
+			console.log(user.run1("跑步1"));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function opnnew(){
+				open("newhtml.html");
+			}
+			function opnnews(){
+				window.location.href="newhtml.html";
+			}
+			function qianjin(){
+				history.go(1);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="打开新页面" onclick="opnnew()"/>
+		<input type="button" name="btn1" id="btn1" value="location"  onclick="opnnews()"/>
+		<input type="button" name="btn2" id="btn2" value="前进" onclick="qianjin" />
+		<a href="newhtml.html">aaa</a>
+	</body>
+</html>

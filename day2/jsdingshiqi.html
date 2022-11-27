@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			var say="Hello World!"
+			var i=0;
+			var divobj;
+			function init(){
+				divobj=document.getElementById("aaaa");
+				setInterval(show,200);
+			}
+			function show(){
+				i++;
+				console.log(i);
+				saynew=say.substring(0,i)
+				divobj.innerHTML=saynew;
+				if(i==say.length){
+					i=0;
+				}
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="aaaa">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+/* id选择器 */
+#h{
+	font-family: "楷体";
+	color: red;
+}
+
+/* 元素选择器 */
+h2{
+	color: red;
+}
+
+/* class选择器 */
+/* 鼠标悬浮上去变色 */
+
+.h2:hover{
+	color: red;
+}
+
+.div1{
+	float: left;
+	background-color: gray;
+	margin-right: 10px;
+}
+.div2{
+	float: left;
+	background-color: gray;
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$Title$</title>
+    <script type="text/javascript" src="js/jquery.min.js">
+
+    </script>
+    <script type="text/javascript">
+        var xhr;
+        //校验用户名称
+        function checkuname() {
+            if(null==$("#uname").val()||$("#uname").val()==''||$("#uname").val()==undefined){
+                $("#utip").text("用户名不能为空！");
+                return;
+            }
+            $("#utip").innerText="";
+			
+			//
+
+            //使用json实现跨域
+            $.ajax({
+                type:"GET",//请求方式
+                url:"http://localhost:8080/Ajaxd01/newUnameCheck.do?",//请求地址
+                data:"uname="+$("#uname").val(),//发送的数据
+				dataType:"jsonp",
+				jsonp:"aaa",
+				success:function(info){
+					 $("#utip").text(info);
+				}
+            })
+        }
+		
+    </script>
+</head>
+<body>
+<form action="myServlet.do">
+    用户名： <input id="uname" type="text" name="uname" onblur="checkuname()"/><span id="utip"></span><br/>
+    密&nbsp;码： <input id="upwd" type="password" name="upwd" /><span id="ptip"></span><br/>
+    <input type="submit"/>
+</form>
+</body>
+</html>

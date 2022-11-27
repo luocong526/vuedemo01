@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.spanclss{
+				color: red;
+				font-weight: 500;
+			}
+		</style>
+		<script type="text/javascript">
+			var flag=true;
+			function checkInfo(obj){
+				var username=document.getElementById("username").value;
+				var password=document.getElementById("password").value;
+				if(checkelement(username)){
+					alert("用户名不能为空");
+					return false;
+				}
+				if(checkelement(password)){
+					alert("密码不能为空");
+					return false;
+				}
+			}
+			function checkeleInf(obj){
+				if(obj.value == "" || obj.value == null || obj.value == undefined){
+					var spanobj=document.getElementById(obj.id+"msg");
+					spanobj.innerHTML+="不能为空，请重新输入";
+					spanobj.style.display="block";
+					spanobj.style.fontSize="20px";
+				}
+			}
+			function lfocus(obj){
+				var spanobj=document.getElementById(obj.id+"msg");
+				spanobj.style.display="none";
+			}
+			function checkelement(obj){
+				if(obj == "" || obj == null || obj == undefined){
+					return true;
+				}
+			}
+			function changeele(obj){
+				var spanobjs=document.getElementById("changespan");
+				spanobjs.innerHTML="改变后的值为: "+obj.value;
+				spanobjs.style.display="block";
+			}
+			function shuangji(){
+				var spanobjs=document.getElementById("shuangjispan");
+				spanobjs.innerHTML="点了两次!";
+				spanobjs.style.display="block";
+			}
+			function taiqi(){
+				var spanobjs=document.getElementById("taiqispan");
+				spanobjs.innerHTML="鼠标抬起了!";
+				spanobjs.style.display="block";
+			}
+			function yidong(){
+				var spanobjs=document.getElementById("yidongspan");
+				spanobjs.innerHTML="鼠标移动了!";
+				spanobjs.style.display="block";
+			}
+		</script>
+	</head>
+	<body>
+		<form action="#" method="post" onsubmit=" return checkInfo(this)">
+			用户名：<input type="text" name="username" id="username" onfocus="checkeleInf(this)" onblur="lfocus(this)"/><br/><br/>
+			<span id="usernamemsg" style="display: none;" class="spanclss">用户名</span>
+			密码：<input type="text" name="password" id="password" onfocus="checkeleInf(this)"  onblur="lfocus(this)"/><br/><br/>
+			<span id="passwordmsg" style="display: none;" class="spanclss">密码</span>
+			<input type="submit" value="提交"/>
+		</form>
+		<hr />
+		改变事件: <input type="text" name="gaibian" id="gaibian" value="112233" onchange="changeele(this)" /><br/><br/>
+		<span id="changespan" style="display: none;" class="spanclss"></span><br/><br/>
+		双击事件：<input type="button" name="shuangji" id="shuangji" value="双击" ondblclick="shuangji()" />
+		<span id="shuangjispan" style="display: none;" class="spanclss"></span><br/><br/>
+		鼠标抬起：<input type="button" name="taiqi" id="taiqi" value="抬起" onmouseup="taiqi()" />
+		<span id="taiqispan" style="display: none;" class="spanclss"></span><br/><br/>
+		鼠标移动：<input type="button" name="yidong" id="yidong" value="移动" onmouseup="yidong()" />
+		<span id="yidongspan" style="display: none;" class="spanclss"></span><br/><br/>
+	</body>
+</html>

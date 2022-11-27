@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				setTimeout(showinfo,2000);
+			});
+			function showinfo(){
+				// $("#ad").show(2000);//展示元素
+				// $("#ad").slideDown(1000);//滑入
+				$("#ad").fadeIn(1000);//淡入
+				setTimeout(hideinfo,2000);
+			}
+			function hideinfo(){
+				// $("#ad").hide(2000);//隐藏
+				// $("#ad").slideUp(1000);//划出
+				$("#ad").fadeOut(1000);//淡出
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ad" style="display: none;">
+			<img src="../img/1.jpg" >
+		</div>
+	</body>
+</html>

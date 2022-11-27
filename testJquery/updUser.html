@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>修改用户信息页面</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var urls=window.location.href;
+				var uid=urls.split("=")[1];
+				console.log(uid);
+				$.ajax({
+					type:"get",
+					url:"http://localhost:8080/Ajaxd01/userListController.do?",
+					data:"uid="+uid,
+					dataType:"jsonp",
+					jsonp:"callback",
+					success:function(ulist){
+						var userl=$.parseJSON(ulist);
+						$.each(userl,function(index,item){
+							$("#upname").val(item.upname);
+							$("#urname").val(item.urname);
+							$("#upwd1").val(item.upwd);
+							$("#upwd2").val(item.upwd);
+							$("#uphone").val(item.uphone);
+							$("#uaddr").val(item.uaddr);
+							$("input[value='"+item.uhobby+"']").attr("checked",true);
+							$("#uemail").val(item.uemail);
+						})
+					},
+					error:function(){
+						
+					}
+				});
+				
+				$("#upduser").validate({
+					rules:{
+						upname:{
+							required:true,
+							rangelength:[6,10],
+							maxlength:10,
+							minlength:6
+						},
+						urname:{
+							required:true,
+							rangelength:[2,5],
+							maxlength:5,
+							minlength:2
+						},
+						upwd1:{
+							required:true,
+							rangelength:[8,10],
+							maxlength:10,
+							minlength:8
+							// pwdrule:true
+						},
+						upwd2:{
+							required:true,
+							rangelength:[8,10],
+							maxlength:10,
+							minlength:8,
+							equalTo:'#upwd1'
+							// pwdrule:true
+						},
+						uphone:{
+							required:true,
+							maxlength:11,
+							minlength:11
+						},
+						uaddr:{
+							required:true
+						},
+						uemail:{
+							required:true,
+							email:true
+						}
+					},
+					messages:{
+						upname:{
+							required:"用户登录名必输！",
+							rangelength:"用户登录名必须在6-10位之间",
+							maxlength:"用户登录名必须在6-10位之间",
+							minlength:"用户登录名必须在6-10位之间"
+						},
+						urname:{
+							required:"用户姓名必输！",
+							rangelength:"用户姓名必须在2-5位之间",
+							maxlength:"用户姓名必须在2-5位之间",
+							minlength:"用户姓名必须在2-5位之间"
+						},
+						upwd1:{
+							required:"密码必输！",
+							rangelength:"用户密码必须在8-10位之间",
+							maxlength:"用户密码必须在8-10位之间",
+							minlength:"用户密码必须在8-10位之间",
+							pwdRule:"密码只能是字母和数字的组合!"
+						},
+						upwd2:{
+							required:"密码必须和上次一致！",
+							rangelength:"用户密码必须在8-10位之间",
+							maxlength:"用户密码必须在8-10位之间",
+							minlength:"用户密码必须在8-10位之间",
+							pwdRule:"密码只能是字母和数字的组合!",
+							equalTo:'密码必须和上次输入一致!'
+						},
+						uphone:{
+							required:"手机号必输",
+							maxlength:"手机号为11位",
+							minlength:"手机号为11位"
+						},
+						uaddr:{
+							required:"地址必输"
+						},
+						uemail:{
+							required:"邮箱必输",
+							email:"邮箱格式不满足要求"
+						}
+					},
+					onfocusout:function(element){
+						$(element).valid();
+					},
+					submitHandler:function(form){
+						$.ajax({
+							type:"GET",
+							url:"http://localhost:8080/Ajaxd01/userUpdateController.do?",
+							data:
+							"uid="+uid+"&"+
+							"upname="+$("#upname").val()+"&"+
+							"urname="+$("#urname").val()+"&"+
+							"Upwd="+$("#pwd1").val()+"&"+
+							"uphone="+$("#uphone").val()+"&"+
+							"uaddr="+$("#uaddr").val()+"&"+
+							"uhobby="+$("input[type='checkbox']:checked").val()+"&"+
+							"uemail="+$("#uemail").val()+"",
+							dataType:"jsonp",
+							jsonp:"callback",
+							success:function(info){
+								alert(info);
+								location.href="table.html";
+							},
+							error:function(){
+								alert("Error");
+							}
+						});
+					}
+				});
+			})
+		</script>
+		<style type="text/css">
+			#bgdv{
+				width: 500px;
+				height: 500px;
+				margin-top: 200px;
+				margin-left: 200px;
+			}
+			#adduser{
+				margin-top: 50px;
+				margin-left: 100px;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bgdv">
+			<form  id="upduser">
+				登录用户：<input type="text" name="upname" id="upname"/><br>
+				用户姓名：<input type="text" name="urname" id="urname"/><br>
+				用户密码：<input type="text" name="upwd1" id="upwd1"/><br>
+				确认密码: <input type="text" name="upwd2" id="upwd2"/><br>
+				用户手机号：<input type="text" name="uphone" id="uphone"/><br>
+				用户地址：<input type="text" name="uaddr" id="uaddr"/><br>
+				用户爱好：<br>
+						写代码：<input type="checkbox" name="uhobby" value="xdm"/><br>
+						看书：<input type="checkbox" name="uhobby" value="ks"/><br>
+						玩耍：<input type="checkbox" name="uhobby" value="ws"/><br>
+				<br>
+				email:<input type="text" name="uemail" id="uemail"/>
+				<br>	
+				<input type="submit" value="提交" style="width: 300px;" />
+			</form>
+		</div>
+	</body>
+</html>

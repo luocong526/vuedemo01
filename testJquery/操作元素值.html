@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQUERY操作元素值</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function fun1(){
+				console.log($("#wz1").text($("#wz").text()));
+				console.log($("#wz1").html($("#wz").html()));
+				console.log($("#wz1").val($("#wzs").val()));
+			}
+			function fun2(){
+				$("#wz").text("修改后-我是标题");
+				$("#wz").html("<p>修改后-我是标题</p><br/>"+$("#wz").html());
+				$("#wzs").val("修改后"+$("#wzs").val());
+			}
+			function fun3(){
+				$("#wz").text("");
+				$("#wz").empty();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wz" style="width: 200; height: 200; border: 1px solid red;">
+			<h1>我是标题</h1>
+			<input type="text" name="wz" id="wzs" value="123" />
+		</div>
+		<div id="wz1" style="width: 200; height: 200; border: 1px solid blue;">
+			
+		</div>
+		<input type="button" name="get" id="getb" value="获取元素值" onclick="fun1()" />
+		<input type="button" name="get" id="getb" value="修改元素值" onclick="fun2()"/>
+		<input type="button" name="get" id="getb" value="清空元素值" onclick="fun3()"/>
+	</body>
+</html>

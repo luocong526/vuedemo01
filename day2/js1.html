@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function checkForm(){
+				var username=document.getElementById("username");
+				var usernames = username.value;
+				if(usernames==null || usernames=="" || usernames==undefined){
+					alert("用户名不能为空");
+					return false;
+				}
+			}
+			function init(){
+				document.getElementById("password").onclick=checkPassword;
+			}
+			function checkPassword(){
+				alert(document.getElementById("password").value)
+			}
+			
+		</script>
+	</head>
+	<body onload="init()">
+			<form action="#" method="get" onsubmit="return checkForm()">
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>姓名: <input type="text" id="username"/></td>
+					</tr>
+					<tr>
+						<td>密码: <input type="password" value="" id="password"/></td>
+					</tr>
+					<tr>
+						<td>性别: <input type="radio" value="" id="sex"/></td>
+					</tr>
+					<tr>
+						<td>爱好: <input type="checkbox" value="" id="hobby"/></td>
+					</tr>
+					<tr>
+						<td>头像: <input type="file" value="" id="userimg"/></td>
+					</tr>
+					<tr>
+						<td>籍贯: 
+							<select name="" id="address">
+								<option value="">--请选择--</option>
+								<option value="">--北京--</option>
+								<option value="">--天津--</option>
+								<option value="">--上海--</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>自我简介: 
+							<textarea rows="10" cols="10" id="userInfo">
+							</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="提交" /></td>
+						<td><input type="reset" id="" name="重置" /></td>
+					</tr>
+				</table>
+			</form>
+	</body>
+</html>

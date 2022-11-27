@@ -1,0 +1,38 @@
+.head{
+	width: 100%;
+	background-color: #FF0000;
+}
+
+.lb{
+	list-style-type: none;
+}
+
+.lbli{
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+	font-size: 15px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#lis:hover{
+	color: blue;
+}
+
+#lis:visited{
+	color: black;
+}
+
+#lis:active{
+	color: blue;
+}
+
+#imgpng{
+	float: left;
+	margin-left: 600px;
+	margin-top: 15px;
+}

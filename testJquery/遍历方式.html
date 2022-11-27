@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQUERY的遍历方式</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var $list=$("li");
+				$list.each(function(index,element){
+					console.log("index: "+index+" element: "+$(element).text());
+				})
+				$.each($list,function(index,element){
+					console.log("$.each index: "+index+" element: "+$(element).text());
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<ol>
+			<li>1aaaaa</li>
+			<li>1aaaa</li>
+			<li>1aaa</li>
+			<li>1aa</li>
+			<li>1a</li>
+		</ol>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中的原型</title>
+		<script type="text/javascript">
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+				this.run=function(ex){
+					console.log(name+" "+age+" 在"+ex);
+				}
+			}
+			console.log(Person);
+			var p1=new Person("张三",18);
+			console.log(p1.run("跑步"));
+			var p2=new Person("李四",20);
+			console.log(p2.run("睡觉")); 
+			//给类中重新增加属性和方法 需要调用类的原型去赋值
+			Person.prototype.sex="男";
+			Person.prototype.eat=function(food){
+				console.log(this.name+" "+this.age+" 在吃 "+food);
+			}
+			console.log(p1.eat("面包"));
+			console.log(p2.eat("西瓜"));
+			console.log(p1);
+			console.log(p2);
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

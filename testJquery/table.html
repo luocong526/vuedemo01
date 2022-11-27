@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 实例 - 上下文类</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">  
+	<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
+	<script src="js/table.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<input type="button" name="add" id="add" value="新增" onclick="add()" />
+<table class="table">
+	<caption>用户信息</caption>
+	<thead>
+		<tr>
+			<th>全选<input type="checkbox" name="ckall" id="ckall" onclick="checkfun()"/></th>
+			<th>序号</th>
+			<th>登录用户</th>
+			<th>用户真实名称</th>
+			<th>用户手机号</th>
+			<th>用户地址</th>
+			<th>用户爱好</th>
+			<th>用户邮箱</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody id="tb">
+	</tbody>
+</table>
+
+</body>
+</html>

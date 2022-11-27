@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function inits(){
+			}
+			function qbyd(){
+				var xuanzhong=[];
+				var optobj=document.getElementsByClassName("optclss1");
+				var optobj1=document.getElementById("you");
+				for(var i=0;i<optobj.length;i++){
+					optobj1.appendChild(optobj[0])
+				}
+			}
+			function ydxz(){
+				var xuanzhong=[];
+				var optobj=document.getElementsByClassName("optclss1");
+				var optobj1=document.getElementById("you");
+				for(var i=0;i<optobj.length;i++){
+					if(optobj[i].selected){
+						optobj1.appendChild(optobj[i])
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="inits()">
+		<select name="zuo" id="zuo" multiple="true">
+			<option value="1" class="optclss1">吃饭</option>
+			<option value="2" class="optclss1">睡觉</option>
+			<option value="3" class="optclss1">打豆豆</option>
+		</select>
+		<input type="button" name="yidong1" id="yidong1" value="移动选中" onclick="ydxz()"/>
+		<input type="button" name="yidong2" id="yidong2" value="全部移动" onclick="qbyd()"/>
+		<select name="you" id="you" multiple="true">
+			
+		</select>
+	</body>
+</html>

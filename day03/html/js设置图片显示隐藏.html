@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var i=0;
+			var idss;
+			function inits(){
+				idss=setInterval(showimg,2000);
+			}
+			function showimg(){
+				if(i==3){
+					clearInterval(idss);
+				}
+				var objs=document.getElementById("dab");
+				objs.style.display="block";
+				setTimeout(hidimg,3000);
+				i++;
+			}
+			function hidimg(){
+				var objs=document.getElementById("dab");
+				objs.style.display="none";
+			}
+		</script>
+	</head>
+	<body onload="inits()">
+		<div id="dab" style="display: none;">
+			<img src="../img/1.jpg" >
+		</div>
+	</body>
+</html>

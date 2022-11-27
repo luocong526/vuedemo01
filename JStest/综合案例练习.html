@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>综合案例练习</title>
+		<script type="text/javascript">
+			function fun1(){
+				var ele=document.getElementById("cls");
+				ele.innerText="";
+				ele.innerText="你说得对！";
+			}
+			
+			function fun2(){
+				var ele=document.getElementById("tk");
+				//生成1000和50以内的随机数
+				var left=Math.floor(Math.random()*1000);
+				var top=Math.floor(Math.random()*1000);
+				//改变div样式
+				ele.style.marginLeft=left+"px";
+				ele.style.marginLeft=top+"px";
+				var ele=document.getElementById("cls");
+				ele.innerText="";
+				ele.innerText="你点不到我";
+			}
+			
+		</script>
+		<style type="text/css">
+			#tk{
+				width: 200px;
+				height: 200px;
+				margin-top: 200px;
+				margin-left: 200px;
+				border: 1px solid gold;
+				background-color: gray;
+				text-align: center;
+			}
+			#tk input{
+				width: 50px;
+				height: 50px;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tk">
+			<h3>我帅吗？</h3>
+			<input type="button" value="帅" onclick="fun1()" />
+			<input type="button" value="不帅" onmouseover="fun2()" />
+			<div id="cls"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Js中document对象的方法</title>
+		<script type="text/javascript">
+			//获取元素值方式
+			function fun1(){
+				//获取的是一个数组 需要按索引取值
+				alert(document.getElementsByClassName("cls")[0].value);
+			}
+			function fun2(){
+				//获取的是一个数组 需要按索引取值
+				alert(document.getElementsByName("ids")[0].value);
+			}
+			function fun3(){
+				//获取的不是一个数组 不需要按索引取值
+				alert(document.getElementById("ids").value);
+			}
+			function fun4(){
+				//获取的是一个数组 需要按索引取值
+				alert(document.getElementsByTagName("input")[0].value);
+			}
+			function fun5(a){
+				//获取的是一个数组 需要按索引取值
+				if(a==0){
+					//赋文本值
+					var div=document.getElementsByClassName("divs")[0];
+					div.innerText="我是superDIV1";
+				}else{
+					//可以赋值为代码
+					var div=document.getElementsByClassName("divs")[0];
+					div.innerHTML="<a href='https://www.baidu.com'>我是superDIV2</a>";
+				}
+			}
+			function fun6(){
+				var ele=document.getElementById("divss");
+				var inp1=document.createElement("input");
+				inp1.setAttribute("type","text");
+				inp1.setAttribute("value","我是新增出来的标签....");
+				var inp2=document.createElement("input");
+				inp2.setAttribute("type","button");
+				inp2.setAttribute("value","删除");
+				inp2.onclick=function(){
+					ele.removeChild(inp1);
+					ele.removeChild(inp2);
+				}
+				ele.appendChild(inp1);
+				ele.appendChild(inp2);
+			}
+			
+			function fun7(){
+				var ele=document.getElementById("divss");
+				// ele.dele();
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" value="我有值" id="ids" name="ids" class="cls" />
+		<input type="button" value="class获取" onclick="fun1()" />
+		<input type="button" value="name获取" onclick="fun2()" />
+		<input type="button" value="id获取" onclick="fun3()"/>
+		<input type="button" value="标签名获取" onclick="fun4()" />
+		<br />
+		<br />
+		<input type="button" value="给div赋值" onclick="fun5(1)" />
+		<input type="button" value="给div赋值" onclick="fun5(0)" />
+		<div class="divs">
+			我是DIV
+		</div>
+		<br />
+		<br />
+		<div id="divss">
+		</div>
+		<input type="button" value="增加" onclick="fun6()" />
+		<input type="button" value="清除" onclick="fun7()" />
+	</body>
+</html>

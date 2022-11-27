@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中window对象的使用</title>
+		<script type="text/javascript">
+			//无确定取消
+			function fun1(){
+				window.alert("弹框1！");
+			}
+			//有确定取消
+			//确定是true 取消是false
+			function fun2(){
+				var r=window.confirm("弹框2！");
+				console.log(r);
+			}
+			
+			function fun3(){
+				var m=window.prompt("请输入信息","例如：小美");
+				console.log(m);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="window弹框1" onclick="fun1()" />
+		<input type="button" value="window弹框" onclick="fun2()" />
+		<input type="button" value="输入弹框" onclick="fun3()" />
+	</body>
+</html>

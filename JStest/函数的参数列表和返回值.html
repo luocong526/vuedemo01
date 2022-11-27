@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS中函数的参数和返回值</title>
+		<script type="text/javascript">
+			/********************传参**********************/
+			//传参
+			function fun1(a,b,c){
+				alert(a);
+				alert(b);
+				alert(c);
+			}
+			
+			fun1(10,20,30);
+			//少传参数可以
+			fun1(10,20);
+			//多穿参数也可以 相当于没传
+			fun1(10,20,30,40);
+			
+			/********************返回值**********************/
+			//方法之间可以相互调用
+			function fun2(a,b){
+				return a+b;
+			}
+			
+			function fun3(a){
+				return fun2(10,20);
+			}
+			
+			alert(fun2(1,2));//3
+			alert(fun3(fun2));//3
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

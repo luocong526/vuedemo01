@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function inits(){
+				var trs=document.getElementsByTagName("tr");
+				for(var i=0;i<trs.length;i++){
+					console.log(i);
+					if(i%2==0){
+						trs[i].style.backgroundColor="red";
+					}else{
+						trs[i].style.backgroundColor="blue";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="inits()">
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>索引</th>
+				<th>用户登录名</th>
+				<th>用户名称</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>jack</td>
+				<td>杰克</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>lose</td>
+				<td>露丝</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>ergouzi</td>
+				<td>二狗子</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>sanmao</td>
+				<td>猫猫</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun2(){
+				window.setInterval(function(){
+					for (var i = 3; i==1; i--) {
+						document.getElementById("dat").value=i;
+					}
+				},3000);
+			}
+			
+		</script>
+	</head>
+	<body onload="fun2()">
+		<input type="text" id="dat" />
+		<input type="button" name="" id="djs" value="执行倒计时" onclick="fun2()" />
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQUERY操作元素属性</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function fun1(){
+				console.log("属性： "+$("#bt").attr("size"));
+				console.log("属性： "+$("#bt").attr("color"));
+				console.log("属性： "+$("#bt").attr("id"));
+			}
+			function fun2(){
+				$("#bt").attr("hidden","hidden");
+			}
+			function fun3(){
+				$("#bt").attr("color","black");
+			}
+			function fun4(){
+				$("#bt").removeAttr("hidden");
+			}
+		</script>
+	</head>
+	<body>
+		<font size="7" color="red" id="bt" >我是标题</font><br>
+		<input type="button" id="getattr" value="获取属性" onclick="fun1()" />
+		<input type="button" id="getattr" value="新增隐藏属性" onclick="fun2()" />
+		<input type="button" id="getattr" value="修改属性" onclick="fun3()"/>
+		<input type="button" id="getattr" value="删除隐藏属性" onclick="fun4()"/>
+	</body>
+</html>

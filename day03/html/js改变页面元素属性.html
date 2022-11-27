@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function inits (){
+				setInterval(showImg(),200);
+				console.log(111);
+				
+			}
+			function showImg(){
+				var objs=document.getElementById("aaaaa");
+				console.log(objs);
+				objs.style.display="none";
+				setTimeout(hideimg,300);
+			}
+			
+			function hideimg(){
+				var objs=document.getElementById("aaaaa");
+				console.log(objs);
+				objs.style.display="block";
+			}
+		</script>
+	</head>
+	<bod onload="inits()">
+		<div id="aaaaa" style="display: block;">
+			<img src="../img/1.jpg" >
+		</div>
+	</body>
+</html>

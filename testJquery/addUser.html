@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户新增页面</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/addUser.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#bgdv{
+				width: 500px;
+				height: 500px;
+				margin-top: 200px;
+				margin-left: 200px;
+			}
+			#adduser{
+				margin-top: 50px;
+				margin-left: 100px;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="bgdv">
+			<form  id="adduser">
+				登录用户：<input type="text" name="upname" id="upname"/><br>
+				用户姓名：<input type="text" name="urname" id="urname"/><br>
+				用户密码：<input type="password" name="upwd1" id="upwd1"/><br>
+				确认密码: <input type="password" name="upwd2" id="upwd2"/><br>
+				用户手机号：<input type="text" name="uphone" id="uphone"/><br>
+				用户地址：<input type="text" name="uaddr" id="uaddr"/><br>
+				用户爱好：<br>
+						写代码：<input type="checkbox" name="uhobby" value="xdm" checked="checked"/>
+						看书：<input type="checkbox" name="uhobby" value="ks"/>
+						玩耍：<input type="checkbox" name="uhobby" value="ws"/>
+				<br>
+				email:<input type="text" name="uemail" id="uemail"/>
+				<br>	
+				<input type="submit" value="提交" style="width: 300px;" />
+			</form>
+		</div>
+	</body>
+</html>
